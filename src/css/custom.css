@@ -1,0 +1,313 @@
+/* stylelint-disable docusaurus/copyright-header */
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: rgb(33, 175, 144);
+  --ifm-color-primary-darker: rgb(31, 165, 136);
+  --ifm-color-primary-darkest: rgb(26, 136, 112);
+  --ifm-color-primary-light: rgb(70, 203, 174);
+  --ifm-color-primary-lighter: rgb(102, 212, 189);
+  --ifm-color-primary-lightest: rgb(146, 224, 208);
+  --ifm-code-font-size: 95%;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgb(72, 77, 91);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+
+
+
+.user-guide-field {
+  overflow: hidden;
+}
+.user-guide-field img{
+  display: block;
+  width: 49%;
+  float: left;
+}
+
+.user-guide-field img:nth-child(2) {
+  float: right;
+}
+
+.user-guide-tac {
+  text-align: center;
+}
+
+.navbar {
+  justify-content: center;
+  font-size: 22px;
+  height: 80px;
+  box-shadow: 0 2px 2px 1px rgb(0 0 0 / 5%);
+}
+
+.navbar .navbar__inner {
+  max-width: 1440px;
+  margin: 0 40px;
+}
+
+.navbar .navbar__brand {
+  height: auto
+}
+
+.docs-wrapper {
+  width: 100%;
+  justify-content: center;
+  background: rgba(245, 247, 249, 1);
+}
+
+html[data-theme=dark] .docs-wrapper {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+main {
+  background: #ffffff;
+}
+
+html[data-theme=dark] main {
+  background: rgba(0, 0, 0, 0);
+}
+
+.docs-wrapper > div {
+  max-width: 1440px;
+  margin: 0 40px;
+}
+
+.navbar img {
+  width: 40px;
+}
+
+.nav-link-btn {
+  font-size: 18px;
+}
+
+.nav-github::before {
+  content: '';
+  display: flex;
+  width: 24px;
+  height: 24px;
+  background: url(../../static/img/github.svg) no-repeat center;
+}
+
+html[data-theme=dark] .nav-github::before {
+  background-image: url(../../static/img/github-dark.svg);
+}
+
+.menu::-webkit-scrollbar-thumb {
+  background: rgba(3, 212, 152, 0.6);
+  border-radius: 8px;
+}
+
+.menu::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+.menu::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.menu__list-item {
+  position: relative;
+}
+/*
+.menu__link--active {
+  color: #000000
+} */
+
+.navbar a, .menu a, .table-of-contents a, .pagination-nav a {
+  text-decoration: none;
+}
+
+.menu .menu__list .menu__list-item a.menu__link--active.active {
+  color: rgb(37, 194, 160);
+  background: #ffffff;
+}
+
+.menu .menu__list .menu__list-item a {
+  font-size: 14px;
+  padding: 3px 0 3px 48px;
+  color: #919ba7
+}
+
+.menu > .menu__list > .menu__list-item > a {
+  font-size: 16px;
+  padding: 4px 0 4px 32px;
+  font-weight: 600;
+  color: #1F242B
+}
+
+.menu__list .menu__list {
+  margin-left: 0;
+}
+
+.menu__link--sublist:after {
+  width: .6rem;
+  position: relative;
+  top: 0;
+}
+
+.menu {
+  overflow: hidden;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+@media (max-width: 750px) {
+  .docs-wrapper > div, .navbar .navbar__inner {
+    margin: 0
+  }
+  .container {
+    padding-left: 2rem !important;
+  }
+  .menu {
+    padding-right: .5rem !important;
+  }
+}
+
+@media (min-width: 997px) {
+  .menu {
+    padding-left: .9rem !important;
+  }
+}
+
+@media (min-width: 1500px) {
+  .menu {
+    padding-left: 0 !important;
+  }
+}
+
+.menu:hover {
+  overflow-y: auto;
+  /* padding-right: 0 !important; */
+}
+
+.menu > .menu__list > .menu__list-item::before {
+  content: '😀';
+  position: absolute;
+  left: 6px;
+  top: 4px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+}
+
+.menu > .menu__list > .menu__list-item:nth-child(2):before {
+  content: '👏'
+}
+
+.menu > .menu__list > .menu__list-item:nth-child(3):before {
+  content: '🤖'
+}
+
+.menu > .menu__list > .menu__list-item:nth-child(4):before {
+  content: '🎮'
+}
+
+.menu > .menu__list > .menu__list-item:nth-child(5):before {
+  content: '🧭'
+}
+
+.menu > .menu__list > .menu__list-item:nth-child(6):before {
+  content: '🛎'
+}
+
+.menu > .menu__list > .menu__list-item:nth-child(7):before {
+  content: '📔'
+}
+
+.menu > .menu__list > .menu__list-item:nth-child(8):before {
+  content: '🧐'
+}
+
+.menu > .menu__list > .menu__list-item:nth-child(9):before {
+  content: '🚀'
+}
+
+.menu > .menu__list > .menu__list-item:nth-child(10):before {
+  content: '🏝'
+}
+
+.menu > .menu__list > .menu__list-item:nth-child(11):before {
+  content: '🗓'
+}
+
+.container {
+  padding-left: 50px;
+}
+
+h1 {
+  font-size: 32px !important;
+  margin-bottom: 32px !important;
+}
+
+h2 {
+  font-size: 24px !important;
+}
+
+h3 {
+  font-size: 20px !important;
+}
+
+hr {
+  transform: scaleY(.7);
+  border-width: 0;
+  border-bottom-width: 1px;
+}
+
+.markdown {
+  color: #424D57
+}
+
+html[data-theme=dark] .menu > .menu__list > .menu__list-item > a, html[data-theme=dark] .markdown, html[data-theme=dark] .markdown > h1,  html[data-theme=dark] .markdown strong, html[data-theme=dark] .markdown > h2 {
+  color: rgb(218, 221, 225)
+}
+
+.markdown > h1, .markdown strong {
+  color: #1F242B;
+}
+
+.markdown > h2 {
+  color: rgb(37, 194, 160);
+}
+
+.markdown img {
+  display: block;
+  margin: 0 auto;
+}
+.highlight {
+  color: #25c2a0;
+  font-weight: 700;
+}
+
+.cancel-md-margin blockquote, .cancel-md-margin p {
+  margin: 0;
+}
+
+.cancel-md-margin blockquote p {
+  margin-bottom: 20px;
+}
+
+.cancel-md-margin h2 {
+  color: rgb(37, 194, 160);
+}
+
+.cancel-img img {
+  width: 80%;
+}
+
+.cancel-img2 img {
+  width: 50%;
+}
+
