@@ -1,10 +1,18 @@
-# Liquid Salon DAO
+## Liquid Salon DAO
+---
 
-Contains the source code for the 
+This repository contains the smart contracts source code for Liquid Salon DAO.
 
-website : 
+### What is Liquid Salon DAO?
+Liquid Salon DAO is a multichain, liquidity aggregating, stablecoin issuance protocol. Users can lend stablecoins or stablecoins related asstes such as interesting bearing tokens or liquidity provider tokens,and then borrow lsUSD.
 
-mail : 
+
+Website : https://liquid.salon/
+Twitter: https://twitter.com/LiquidSalonDAO
+Telegram: https://t.me/liquidsalondao
+Medium: https://medium.com/@LiquidSalonDAO
+Discord: https://discord.gg/JEJgXNXBDw
+
 
 # Development
 
