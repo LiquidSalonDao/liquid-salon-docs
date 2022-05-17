@@ -5,10 +5,11 @@
 
 
 ## Introduction
+111
 
-The Protocol Control Debt (PCD) mechanism is deployed via a contract to aggregate segmented liquidity from connected blockchains. Collateral can only be stablecoins related assets, the Protocol Control Debt mechanism takes control of LUSD debts and collaterals : users can sell LUSD via PCD with some fees in the event of periods below the peg.
+The Protocol Control Debt (PCD) mechanism is deployed via a contract to aggregate segmented liquidity from connected blockchains. Collateral can only be stablecoins related assets, the Protocol Control Debt mechanism takes control of lsUSD debts and collaterals : users can sell lsUSD via PCD with some fees in the event of periods below the peg.
 
-Liquid Salon is similar to other stablecoin issuance protocols regarding users' experience, except users can sell LUSD via PCD when the price of LUSD is under $1 (Imagining PCD is similar to the pool on Curve for other stablecoin issurance protocol). **PCD will only exchange fiat-backed stablecoins for LUSD in this scenario.** 
+Liquid Salon is similar to other stablecoin issuance protocols regarding users' experience, except users can sell lsUSD via PCD when the price of lsUSD is under $1 (Imagining PCD is similar to the pool on Curve for other stablecoin issurance protocol). **PCD will only exchange fiat-backed stablecoins for lsUSD in this scenario.** 
 
 #### Collatrals
 
@@ -24,7 +25,7 @@ New collateral will be voted by DAO governance.
 
 #### Borrow
 
-Users can lend stablecoins and borrow LUSD via PCD. For example, Users can lend USDC and borrow LUSD at a 1:1 ratio. PCD provides isolated lending markets, that allow users to adjust their risk tolerance according to the collateral they decide to use. **There is no interest rate and borrow fee related to LUSD borrowing.** 
+Users can lend stablecoins and borrow lsUSD via PCD. For example, Users can lend USDC and borrow lsUSD at a 1:1 ratio. PCD provides isolated lending markets, that allow users to adjust their risk tolerance according to the collateral they decide to use. **There is no interest rate and borrow fee related to lsUSD borrowing.** 
 
 #### Repayment
 
@@ -32,15 +33,15 @@ Users are able to claim the collateral back after repaying the loan. They can pa
 
 #### Price Reblancing
 
-When LUSD < $1, 
+When lsUSD < $1, 
 
-- Debt holders are motived to purchase LUSD and pay the debt with less dollars
-- Non-debt holders will buy LUSD and sell it to PCD with some fees
+- Debt holders are motived to purchase lsUSD and pay the debt with less dollars
+- Non-debt holders will buy lsUSD and sell it to PCD with some fees
 
-When LUSD > $1,
+When lsUSD > $1,
 
-- Debt holders are motived to sell LUSD in the market
-- Non-debt holders will open a position and sell LUSD in the market
+- Debt holders are motived to sell lsUSD in the market
+- Non-debt holders will open a position and sell lsUSD in the market
 
 
 
@@ -50,7 +51,7 @@ When liquidation happens, the collateral may be partially sold to meet the minim
 
 #### Collateral Factor
 
-The collateral factor defines the maximum amount that can be borrowed with a specific collateral. It is expressed in decimal: at CF = 1, for every 1 USDC worth of collateral, borrowers will be able to borrow 1 LUSD. Once a borrow is taken, the collateral factor changes with market conditions.
+The collateral factor defines the maximum amount that can be borrowed with a specific collateral. It is expressed in decimal: at CF = 1, for every 1 USDC worth of collateral, borrowers will be able to borrow 1 lsUSD. Once a borrow is taken, the collateral factor changes with market conditions.
 
 **For each wallet the maximum CF is calculated as the weighted average of the CFs of the collateral assets and their value:**
 $$
