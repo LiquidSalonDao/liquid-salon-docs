@@ -5,7 +5,6 @@
 
 
 ## Introduction
-111
 
 The Protocol Control Debt (PCD) mechanism is deployed via a contract to aggregate segmented liquidity from connected blockchains. Collateral can only be stablecoins related assets, the Protocol Control Debt mechanism takes control of lsUSD debts and collaterals : users can sell lsUSD via PCD with some fees in the event of periods below the peg.
 
