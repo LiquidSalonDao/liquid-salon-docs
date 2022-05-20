@@ -126,6 +126,10 @@ The grading system for Curve LPs and UNI V3 LPs:3Crv LP is considered as the hig
 
 
 
+#### USDC Staking
+
+USDC staking is similar to term deopsit. Users are able to choose different periods, 7 days, 14 days, 30 days, 60 days and 180 days. Base interest rate will increase over time. (Base interest rate is the I<sub>0</sub> in the below equation)
+
 #### USDC Deposit Interest Rate
 
 Liquid Salon DAO's USDC interest rate strategy is used to manage liquidity risk and optimise utilisation. The deposit interest rate comes from the Reserve Rate R. Note: Reserve rate equation: 
