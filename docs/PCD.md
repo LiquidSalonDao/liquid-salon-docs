@@ -97,12 +97,6 @@ PCD protocol supports extra yield earning for collaterals under the condition if
 - Can only ever grow in token amount;
 - Can be deposited and withdrawn at will.
 
-#### Resrve factor
-
-The reserve factor allocates a share of the protocol's collaterals as reserve for saftey purpose. The current reserve factor is set to 0.2. When reserve factor < 0.2, the protocol will withdraw collaterals from yield vaults to let reserve factor back above 0.2.
-
-
-
 
 
 

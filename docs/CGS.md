@@ -1,3 +1,21 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Collateral Grading System
 
 ---
@@ -105,4 +123,45 @@ The grading system for Curve LPs and UNI V3 LPs:3Crv LP is considered as the hig
 | MIM/3crv        | 0.68              |
 | UST/3crv        | 0.73              |
 | DAI/USDC UNI V3 | 0.85              |
+
+
+
+#### USDC Deposit Interest Rate
+
+Liquid Salon DAO's USDC interest rate strategy is used to manage liquidity risk and optimise utilisation. The deposit interest rate comes from the Reserve Rate R. Note: Reserve rate equation: 
+$$
+Reserve\;Rate=\frac{fiat\;backed\;stablecoins}{total\;supply\;of\;lsUSD}
+$$
+R is an indicator of the availability of USDC in the pool for users to swap alUSD into USDC. The interest rate model is used to manage liquidity risk through user incentivises to support liquidity:
+
+- When reserve is enough: low interest rate to encourage lsUSD loans
+- When reserve is scarce: high interest rate to encourage repayments of loans or additional deposits of USDC
+
+### Interest Rate Model
+
+Liquidity risk materialises when reserve is low, it becomes more problematic as R gets closer to 0%. To tailor the model to this constarint, the interest rate curve is split in two parts around an optimal reserve are R<sub>optimal</sub>. For liquid slaon dao, R<sub>optimal</sub> = 100%. After R<sub>optimal</sub> the slope is small, before it changes sharply.  
+
+$$
+if\;R> R_{optimal}:\;I_t= I_0 + \frac{R_{optimal}}{R_t-R_{optimal}}R_{slope1}
+$$
+
+$$
+if\;R \leq R_{optimal}:\;I_t= I_0 + R_{slpoe1}+\frac{R_{optimal}}{R_t}R_{slope2}
+$$
+
+
+In the borrow rate of loans on liquid salon dao, it is also affected by Reserve Rate. 
+
+- When R > R<sub>optimal</sub> the borrow interest rates decreases slowly as Reserve Rate increases
+- When R < R<sub>optimal</sub> the borrow interest rates increase sharply as Reserve Rate decreases
+
+Variable loans see their borrow rate constantly evolving with Reserve Rate decreasing. 
+
+Interest Rate Parameter for USDC
+
+| Asset | R<sub>optimal</sub> | Base | Slope1 | Slope2 |
+| ----- | ------------------- | ---- | ------ | ------ |
+| USDC  | 100%                | 0    | 2%     | 80%    |
+
+
 
