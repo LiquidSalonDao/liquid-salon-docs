@@ -48,6 +48,14 @@ When lsUSD > $1,
 
 When liquidation happens, the collateral may be partially sold to meet the minimun requirement of liquidation threshold. It is due to all the collaterals accepted on PCD are stablcoin related assets, the price of these collaterals is quite stable. Under some circumstances, like oracle attack, the price of these assests maybe fluctuate. In order to protect users' interest, PCD only liquidate part of users' position.
 
+
+
+#### Partial Liquidation
+
+Traditionally, a user’s position is completely closed in a liquidation event. In contrast to this, Liquid Salon employs a partial liquidation model to protect our users against this.In a partial liquidation event, a user’s collateral is partially sold until the minimum liquidation threshold is met.The partial liquidation model is made possible by PCD’s strict policy of only accepting stablecoin-related assets as collaterals. The price of these assets is usually sturdily stable, except for occasional fluctuation under circumstances like an oracle attack.
+
+
+
 #### Collateral Factor
 
 The collateral factor defines the maximum amount that can be borrowed with a specific collateral. It is expressed in decimal: at CF = 1, for every 1 USDC worth of collateral, borrowers will be able to borrow 1 lsUSD. Once a borrow is taken, the collateral factor changes with market conditions.
@@ -92,7 +100,7 @@ Our on-chain oracle will include Chainlink, Curve, and Uniswap V3 by using time 
 
 ## Yield Vault
 
-PCD protocol supports extra yield earning for collaterals under the condition if the yield strategy: 
+PCD protocol supports extra yield earning for collaterals if the yield strategy: 
 
 - Can only ever grow in token amount;
 - Can be deposited and withdrawn at will.

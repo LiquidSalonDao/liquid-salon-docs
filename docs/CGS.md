@@ -16,6 +16,8 @@
 
 
 
+
+
 # Collateral Grading System
 
 ---
@@ -128,22 +130,22 @@ The grading system for Curve LPs and UNI V3 LPs:3Crv LP is considered as the hig
 
 #### USDC Staking
 
-USDC staking is similar to term deopsit. Users are able to choose different periods, 7 days, 14 days, 30 days, 60 days and 180 days. Base interest rate will increase over time. (Base interest rate is the I<sub>0</sub> in the below equation)
+USDC staking is similar to the concept of term deopsit. Users can choose between 7, 14, 30, 60, or 180 days as the lockup period. A higher base interest rate (I0) is applied to longer lockup periods.
 
-#### USDC Deposit Interest Rate
+#### USDC Deposit Interest Rate Model
 
-Liquid Salon DAO's USDC interest rate strategy is used to manage liquidity risk and optimise utilisation. The deposit interest rate comes from the Reserve Rate R. Note: Reserve rate equation: 
+The interest rate model's goal is to control liquidity risk and maximize capital efficiency. To achieve this goal, we can make the staking interest rate inversely associated with the Reserve Rate R, incentivizing users to keep the pool balanced. Note: Reserve rate equation: 
 $$
 Reserve\;Rate=\frac{fiat\;backed\;stablecoins}{total\;supply\;of\;lsUSD}
 $$
 R is an indicator of the availability of USDC in the pool for users to swap alUSD into USDC. The interest rate model is used to manage liquidity risk through user incentivises to support liquidity:
 
-- When reserve is enough: low interest rate to encourage lsUSD loans
-- When reserve is scarce: high interest rate to encourage repayments of loans or additional deposits of USDC
+- When USDC reserve is abundant: low interest rate to encourage lsUSD loans
+- When USDC reserve is scarce: high interest rate to encourage repayments of loans or additional deposits of USDC
 
 ### Interest Rate Model
 
-Liquidity risk materialises when reserve is low, it becomes more problematic as R gets closer to 0%. To tailor the model to this constarint, the interest rate curve is split in two parts around an optimal reserve are R<sub>optimal</sub>. For liquid slaon dao, R<sub>optimal</sub> = 100%. After R<sub>optimal</sub> the slope is small, before it changes sharply.  
+Liquidity risk materialises when the USDC reserve is low, it becomes more problematic as R gets closer to 0%. To tailor the model to this constraint, the interest rate curve is split in two parts by an optimal reserve Rate R<sub>optimal</sub>. For liquid slaon dao, R<sub>optimal</sub> = 100%.   
 
 $$
 if\;R> R_{optimal}:\;I_t= I_0 + \frac{R_{optimal}}{R_t-R_{optimal}}R_{slope1}
@@ -154,7 +156,7 @@ if\;R \leq R_{optimal}:\;I_t= I_0 + R_{slpoe1}+\frac{R_{optimal}}{R_t}R_{slope2}
 $$
 
 
-In the borrow rate of loans on liquid salon dao, it is also affected by Reserve Rate. 
+In the borrow rate of loans on liquid salon dao, the interest rate is also affected by Reserve Rate. 
 
 - When R > R<sub>optimal</sub> the borrow interest rates decreases slowly as Reserve Rate increases
 - When R < R<sub>optimal</sub> the borrow interest rates increase sharply as Reserve Rate decreases
@@ -165,7 +167,8 @@ Interest Rate Parameter for USDC
 
 | Asset | R<sub>optimal</sub> | Base | Slope1 | Slope2 |
 | ----- | ------------------- | ---- | ------ | ------ |
-| USDC  | 100%                | 0    | 2%     | 80%    |
+| USDC  | 100%                | 0    | 2%     | 60%    |
 
+#### Safety Model
 
-
+The safety mode is triggered when the Reserve Rate falls below 20% and remains active until the Reserve Rate goes above 25%. Under the safety mode, the protocol accepts deposits and repayments of USDC but stops the issuance of loans or lsUSD.
