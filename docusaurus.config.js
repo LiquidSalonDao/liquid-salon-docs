@@ -3,7 +3,7 @@ module.exports = {
   title: 'LiquidSalonDAO',
   tagline: 'LiquidSalonDAO are cool',
   url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
